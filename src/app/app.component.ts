@@ -14,6 +14,11 @@ export class AppComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       address: this.fb.array([this.fb.control('')]),
+      addresses: this.fb.array([
+        this.fb.group({
+          address: [''],
+        }),
+      ]),
     });
   }
 
@@ -21,8 +26,14 @@ export class AppComponent implements OnInit {
     return this.myForm.get('address') as FormArray;
   }
 
+  get addresses(): FormArray {
+    return this.myForm.get('addresses') as FormArray;
+  }
+
   addAddress() {
     this.address.push(this.fb.control(''));
+
+    // this.addresses.push(this.fb.group({ address: [''] }));
   }
 
   handleOnSubmit() {
