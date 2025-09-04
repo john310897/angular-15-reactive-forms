@@ -1,4 +1,6 @@
-/* Add application styles & imports to this file! */
-button {
+#submit-button {
   margin-top: 5%;
+}
+input {
+  margin: 5px;
 }

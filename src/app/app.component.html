@@ -37,9 +37,13 @@
       <td>Address:</td>
       <td>
         <div formArrayName="address">
-          <div *ngFor="let a of address.controls; let i = index">
+          <div
+            *ngFor="let a of address.controls; let i = index; let isLast = last"
+          >
             <input type="text" [formControlName]="i" />
-            <button type="button" (click)="addAddress()">+</button>
+            <button *ngIf="isLast" type="button" (click)="addAddress()">
+              +
+            </button>
           </div>
         </div>
 
@@ -56,5 +60,5 @@
     </tr>
   </table>
 
-  <button type="submit">Submit</button>
+  <button type="submit" id="submit-button">Submit</button>
 </form>
