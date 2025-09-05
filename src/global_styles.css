@@ -1,6 +1,7 @@
-#submit-button {
+button[type="submit"] {
   margin-top: 5%;
 }
+
 input {
   margin: 5px;
 }
